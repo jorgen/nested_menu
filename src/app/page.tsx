@@ -18,7 +18,7 @@ export default function Home() {
         { component: 'Sub Option 1' },
         { component: <Checkbox onClick={(event)=> {event.stopPropagation();}}/> },
         {
-          component: 'more stuff',
+          component: <Checkbox/>,
           subItems: [
             { component: <Checkbox/> },
             { component: 'Sub Option 4' }, 
