@@ -9,6 +9,7 @@ interface TlcMenuProps {
 }
 export function TlcMenu({ items, anchorEl, onCloseMenu }: TlcMenuProps) {
   const [menuVisible, setMenuVisible] = useState(true);
+  const [siblingMenuItemMouseOver, setSiblingMenuItemMouseOver] = useState(null);
   return (
     <Menu
       anchorEl={anchorEl}
@@ -18,7 +19,7 @@ export function TlcMenu({ items, anchorEl, onCloseMenu }: TlcMenuProps) {
       onClose={()=>{ onCloseMenu();}}
     >
       {items?.map((item: any, index: React.Key | null | undefined) => {
-        return (<TlcMenuItemComponent key={index} item={item} onClose={onCloseMenu}/>);
+        return (<TlcMenuItemComponent key={index} item={item} onClose={onCloseMenu} siblingMenuItemMouseOver={siblingMenuItemMouseOver} setSiblingMenuItemMouseOver={setSiblingMenuItemMouseOver}/>);
       })}
     </Menu>
   );
